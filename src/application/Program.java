@@ -40,7 +40,15 @@ public class Program {
 				int n =sc.nextInt();
 				cadastrarLivros(n, titulo, autor, ano, quantidade, sc);
 			} else if(option == 2) {
+				System.out.println("=== LIVROS ===");
+				System.out.println();
 				listarLivros(titulo, autor, ano, quantidade, sc);
+			} else if(option == 3) {
+				System.out.print("Digite o título: ");
+				sc.nextLine();
+				String title = sc.nextLine();
+				System.out.println();
+				buscarLivro(title, titulo, autor, ano, quantidade, sc);
 			}
 			
 		} while(option != 0);
@@ -61,6 +69,7 @@ public class Program {
 			int anoPublicacao = sc.nextInt();
 			System.out.print("Quantidade Disponível: ");
 			int quantDisponivel = sc.nextInt();
+			System.out.println();
 			titulo.add(title);
 			autor.add(author);
 			ano.add(anoPublicacao);
@@ -78,6 +87,19 @@ public class Program {
 			int j = i+1;
 			System.out.println(j + " -  Titulo: " + title + "\n     Autor: " + author + "\n     Ano: " + anoPublicacao + "\n     Disponíveis: " + quantDisponivel);
 			System.out.println();
+		}
+	}
+	
+	public static void buscarLivro(String title, List<String> titulo, List<String> autor, List<Integer> ano, List<Integer> quantidade, Scanner sc) {
+		
+		for(int i=0; i<titulo.size(); i++) {
+			
+			if(title.equals(titulo.get(i))) {
+				
+				System.out.println("Livro encontrado!");
+				System.out.println("Autor: " + autor.get(i));
+				System.out.println("Disponíveis: " + quantidade.get(i));
+			}
 		}
 	}
 }
