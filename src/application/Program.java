@@ -13,7 +13,7 @@ public class Program {
 		List<String> autor = new ArrayList<>();
 		List<Integer> ano = new ArrayList<>();
 		List<Integer> quantidade = new ArrayList<>();
-		int option = -1;
+		int option;
 		
 		do {
 			System.out.println("==============================");
@@ -31,14 +31,16 @@ public class Program {
 			System.out.println();
 			System.out.print("Escolha uma opção: ");
 			option = sc.nextInt();
+			System.out.println();
 			
 			if(option == 0) {
 				System.out.println("Encerrando programa!");
 			} else if(option == 1) {
 				System.out.print("Quantos livros deseja cadastrar: ");
 				int n =sc.nextInt();
-				
 				cadastrarLivros(n, titulo, autor, ano, quantidade, sc);
+			} else if(option == 2) {
+				listarLivros(titulo, autor, ano, quantidade, sc);
 			}
 			
 		} while(option != 0);
@@ -63,6 +65,19 @@ public class Program {
 			autor.add(author);
 			ano.add(anoPublicacao);
 			quantidade.add(quantDisponivel);
+		}
+	}
+	
+	public static void listarLivros(List<String> titulo, List<String> autor, List<Integer> ano, List<Integer> quantidade, Scanner sc) {
+		
+		for(int i=0; i<titulo.size(); i++) {
+			String title = titulo.get(i);
+			String author = autor.get(i);
+			int anoPublicacao = ano.get(i);
+			int quantDisponivel = quantidade.get(i);
+			int j = i+1;
+			System.out.println(j + " -  Titulo: " + title + "\n     Autor: " + author + "\n     Ano: " + anoPublicacao + "\n     Disponíveis: " + quantDisponivel);
+			System.out.println();
 		}
 	}
 }
