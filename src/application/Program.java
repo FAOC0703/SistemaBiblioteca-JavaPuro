@@ -31,9 +31,38 @@ public class Program {
 			System.out.println();
 			System.out.print("Escolha uma opção: ");
 			option = sc.nextInt();
+			
+			if(option == 0) {
+				System.out.println("Encerrando programa!");
+			} else if(option == 1) {
+				System.out.print("Quantos livros deseja cadastrar: ");
+				int n =sc.nextInt();
+				
+				cadastrarLivros(n, titulo, autor, ano, quantidade, sc);
+			}
+			
 		} while(option != 0);
 		
 		
 		sc.close();
+	}
+	
+	public static void cadastrarLivros(int n, List<String> titulo, List<String> autor, List<Integer> ano, List<Integer> quantidade, Scanner sc) {
+		
+		for(int i=0; i<n; i++) {
+			sc.nextLine();
+			System.out.print("Titulo: ");
+			String title = sc.nextLine();
+			System.out.print("Autor: ");
+			String author = sc.nextLine();
+			System.out.print("Ano de Publicação: ");
+			int anoPublicacao = sc.nextInt();
+			System.out.print("Quantidade Disponível: ");
+			int quantDisponivel = sc.nextInt();
+			titulo.add(title);
+			autor.add(author);
+			ano.add(anoPublicacao);
+			quantidade.add(quantDisponivel);
+		}
 	}
 }
