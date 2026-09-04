@@ -49,6 +49,11 @@ public class Program {
 				String title = sc.nextLine();
 				System.out.println();
 				buscarLivro(title, titulo, autor, ano, quantidade, sc);
+			} else if(option == 4) {
+				System.out.print("Digite o título: ");
+				sc.nextLine();
+				String title = sc.nextLine();
+				emprestarLivro(title, titulo, autor, ano, quantidade, sc);
 			}
 			
 		} while(option != 0);
@@ -102,4 +107,26 @@ public class Program {
 			}
 		}
 	}
+	
+	public static void emprestarLivro(String title, List<String> titulo, List<String> autor, List<Integer> ano, List<Integer> quantidade, Scanner sc) {
+		
+		for(int i=0; i<titulo.size(); i++) {
+			
+			if(title.equals(titulo.get(i))) {
+				
+				System.out.println();
+				
+				if(quantidade.get(i) > 0) {
+					int novoValor = quantidade.get(i) - 1;
+					System.out.println("Empréstimo realizado!");
+					System.out.println(novoValor);
+				} else {
+					System.out.println("Livro indisponível.");
+				}
+			}
+		}
+		
+		
+	}	
+	
 }
