@@ -4,6 +4,13 @@
 
 A seguir as funções que podem ser realizadas no programa:
 
+<ul>
+    <li> 📖 Cadastrar livros</li>
+    <li> 📋 Listar os livros cadastrados</li>
+    <li> 🔎 Buscar um livro</li>
+    <li> 📤 Emprestar um livro</li>
+</ul>
+
 ### Pré Requisitos
 O que você precisa para instalar o software e como instalá-lo.
 
