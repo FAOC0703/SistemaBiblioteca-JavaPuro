@@ -1,6 +1,7 @@
 # Sistema Biblioteca - Java Puro
 
-É um programa executado pelo terminal que simula o funcionamento básico de uma biblioteca.
+É um programa executado pelo terminal que simula o funcionamento básico de uma biblioteca.<br>
+Foi um desafio focado em colocar em prática o arrayList do java e suas funcionalidades.
 
 A seguir as funções que podem ser realizadas no programa:
 
@@ -9,6 +10,9 @@ A seguir as funções que podem ser realizadas no programa:
     <li> 📋 Listar os livros cadastrados</li>
     <li> 🔎 Buscar um livro</li>
     <li> 📤 Emprestar um livro</li>
+    <li> 📥 Devolver um livro</li>
+    <li> 🗑️ Remover um livro</li>
+    <li> 🚪 Sair do sistema</li>
 </ul>
 
 ### Pré Requisitos
