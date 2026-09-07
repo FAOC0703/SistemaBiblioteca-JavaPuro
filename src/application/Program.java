@@ -59,6 +59,11 @@ public class Program {
 				sc.nextLine();
 				String title = sc.nextLine();
 				devolverLivro(title, titulo, autor, ano, quantidade, sc);
+			} else if(option == 6) {
+				System.out.print("Digite o título: ");
+				sc.nextLine();
+				String title = sc.nextLine();
+				removerLivro(title, titulo, autor, ano, quantidade, sc);
 			}
 			
 		} while(option != 0);
@@ -143,11 +148,32 @@ public class Program {
 				
 				System.out.println();
 				
-				if(quantidade.get(i) > 0) {
+				if(quantidade.get(i) >= 0) {
 					quantidade.set(i, quantidade.get(i) + 1);
 					System.out.println("Devolução realizada!");
 					System.out.println("Autor: " + autor.get(i));
 					System.out.println("Disponíveis: " + quantidade.get(i));
+				}
+			}
+		}
+		
+		
+	}
+	
+	public static void removerLivro(String title, List<String> titulo, List<String> autor, List<Integer> ano, List<Integer> quantidade, Scanner sc) {
+		
+		for(int i=0; i<titulo.size(); i++) {
+			
+			if(title.equals(titulo.get(i))) {
+				
+				System.out.println();
+				
+				if(quantidade.get(i) > 0) {
+					quantidade.remove(i);
+					titulo.remove(i);
+					autor.remove(i);
+					ano.remove(i);
+					System.out.println("Remoção realizada!");
 				}
 			}
 		}
